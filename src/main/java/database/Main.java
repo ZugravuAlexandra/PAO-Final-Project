@@ -59,10 +59,9 @@ public class Main {
             System.out.println("\033[1;35m1. Adrese\033[0m");
             System.out.println("\033[1;35m2. Biblioteci\033[0m");
             System.out.println("\033[1;35m3. Angajati\033[0m");
-            System.out.println("\033[1;35m4. Cititori\033[0m");
-            System.out.println("\033[1;35m5. Carti\033[0m");
-            System.out.println("\033[1;35m6. Evenimente\033[0m");
-            System.out.println("\033[1;35m7. Utilizatori\033[0m");
+            System.out.println("\033[1;35m4. Carti\033[0m");
+            System.out.println("\033[1;35m5. Evenimente\033[0m");
+            System.out.println("\033[1;35m6. Utilizatori\033[0m");
             System.out.println("\033[1;35m0. Înapoi la meniul principal\033[0m");
 
             int optiune = citesteOptiune(scanner, 7);
@@ -78,15 +77,12 @@ public class Main {
                     serviceAngajat.meniuAngajati();
                     break;
                 case 4:
-                    serviceCititor.meniuCititor();
-                    break;
-                case 5:
                     serviceCarte.meniuCarte();
                     break;
-                case 6:
+                case 5:
                     serviceEvenimente.meniuEvenimente();
                     break;
-                case 7:
+                case 6:
                     serviceUtilizator.meniuUtilizator();
                     break;
                 case 0:
