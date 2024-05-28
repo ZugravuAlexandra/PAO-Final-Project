@@ -93,7 +93,7 @@ public class EvenimentRepo {
         String data = resultSet.getString("data");
         String ora = resultSet.getString("ora");
         int adresaId = resultSet.getInt("adresa_id");
-        Adresa adresa = new AdresaRepo().readById(adresaId); // presupunând că avem o clasă AdresaRepo
+        Adresa adresa = new AdresaRepo().readById(adresaId);
         int pret = resultSet.getInt("pret");
 
         return new Evenimente(id, titlu, data, ora, adresa, pret);

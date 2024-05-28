@@ -7,7 +7,7 @@ import database.entitati.Recenzii;
 import java.util.*;
 
 public class ServiceCarte {
-    private Map<Integer, Carte> carti = new HashMap<>();
+    private Map<Integer, Carte> carti = new HashMap<>(); // am facut un map cu id-ul cartii ca si cheie
     private Scanner scanner = new Scanner(System.in);
 
     public void meniuCarte() {
@@ -124,10 +124,10 @@ public class ServiceCarte {
         // Sortează lista de recenzii după numele utilizatorului
         Collections.sort(recenzii, Comparator.comparing(Recenzii::getIndivid));
 
-        // Afiseaza lista sortata
-        for (Recenzii recenzie : recenzii) {
-            System.out.println(recenzie);
-        }
+//        // Afiseaza lista sortata
+//        for (Recenzii recenzie : recenzii) {
+//            System.out.println(recenzie);
+//        }
     }
 
     private void afisareCarte() {
@@ -136,9 +136,11 @@ public class ServiceCarte {
             System.out.println("Nu exista carti care au fost inregistrate");
         } else {
             for (Carte carte : carti.values()) {
+                sortareRecenzii(carte.getRecenzii());
                 System.out.println(carte);
                 // Sortează recenziile cărții înainte de afișare
-                sortareRecenzii(carte.getRecenzii());
+
+
             }
         }
     }

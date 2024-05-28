@@ -5,7 +5,9 @@ public class Biblioteca {
     private int id;
     private String nume;
 
+    // Compozitie (has a)
     private Adresa adresa;
+    // Agregare: Cartea poate exista fara biblioteca
     private List<Carte> carti;
 
     public Biblioteca() {}

@@ -19,8 +19,7 @@ public class Sectiuni {
 
     @Override
     public String toString() {
-        return "Sectiuni{" +
-                "nume_sec='" + nume_sec + '\'' +
-                '}';
+        return "Sectiuni: " + "\n" +
+                "nume_sec='" + nume_sec ;
     }
 }

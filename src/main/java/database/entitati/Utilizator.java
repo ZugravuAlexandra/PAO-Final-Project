@@ -65,11 +65,10 @@ public class Utilizator {
     @Override
     public String toString() {
         return "Utilizator: " +
-                "id = " + id +
-                ", nume = " + nume +
-                ", email='" + email +
-                ", telefon='" + telefon +
-                '}';
+                "id = " + id +"\n" +
+                ", nume = " + nume + "\n" +
+                ", email='" + email + "\n" +
+                ", telefon='" + telefon + "\n";
     }
 
 }

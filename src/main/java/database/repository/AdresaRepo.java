@@ -41,7 +41,7 @@ public class AdresaRepo {
     public List<Adresa> readAll() {
         List<Adresa> adrese = new ArrayList<>();
         try (PreparedStatement statement = connection.prepareStatement(SELECT_ALL_QUERY);
-             ResultSet resultSet = statement.executeQuery()) {
+             ResultSet resultSet = statement.executeQuery()) { // salvez rezultatul interogarii in resultSet
             while (resultSet.next()) {
                 Adresa adresa = new Adresa(
                         resultSet.getInt("id"),
@@ -60,7 +60,7 @@ public class AdresaRepo {
     public static Adresa readById(int id) {
         Adresa adresa = null;
         try (PreparedStatement statement = connection.prepareStatement(SELECT_BY_ID_QUERY)) {
-            statement.setInt(1, id);
+            statement.setInt(1, id); // setez parametrul din query cu id-ul primit ca parametru
             try (ResultSet resultSet = statement.executeQuery()) {
                 if (resultSet.next()) {
                     adresa = new Adresa(

@@ -10,6 +10,7 @@ public class DatabaseConfiguration {
     private static final String PASSWORD = "MyRandomPassword";
     private static Connection connection;
 
+
     private DatabaseConfiguration() {}
 
     public static Connection getDatabaseConnection() {

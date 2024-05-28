@@ -28,9 +28,9 @@ public class Recenzii {
 
     @Override
     public String toString() {
-        return "Recenzii: " +
-                "individ: '" + individ + '\'' +
-                ", recenzie='" + recenzie + '\'' +
-                '}';
+        return "Recenzii: " + "\n" +
+                "Individ: " + individ + "\n" +
+                "Recenzie: " + recenzie + "\n" ;
     }
+
 }

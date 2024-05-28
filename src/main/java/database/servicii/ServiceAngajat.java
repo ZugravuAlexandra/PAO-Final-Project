@@ -132,8 +132,8 @@ public class ServiceAngajat {
 
     // Metoda pentru verificarea numărului de telefon folosind expresii regulate
     private boolean isValidPhoneNumber(String telefon) {
-        // Se poate ajusta în funcție de formatul specific dorit pentru numărul de telefon
-        String regex = "^\\d{10}$"; // Se presupune că numărul de telefon are 10 cifre
+
+        String regex = "^\\d{10}$"; //  numărul de telefon are 10 cifre
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(telefon);
         return matcher.matches();
