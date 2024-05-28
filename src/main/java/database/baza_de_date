@@ -1,0 +1,36 @@
+use incercare_3;
+
+CREATE TABLE angajati (
+                          id INT PRIMARY KEY,
+                          nume VARCHAR(100),
+                          prenume VARCHAR(100),
+                          email VARCHAR(100),
+                          telefon VARCHAR(20),
+                          data_angajare DATE,
+                          pozitie VARCHAR(100)
+);
+
+CREATE TABLE Evenimente (
+                            id INT PRIMARY KEY AUTO_INCREMENT,
+                            titlu VARCHAR(255),
+                            data DATE,
+                            ora TIME,
+                            adresa_id INT,
+                            pret INT,
+                            FOREIGN KEY (adresa_id) REFERENCES adrese(id)
+);
+
+CREATE TABLE Utilizator (
+                            id INT PRIMARY KEY AUTO_INCREMENT,
+                            nume VARCHAR(255),
+                            prenume VARCHAR(255),
+                            email VARCHAR(255),
+                            telefon VARCHAR(20)
+);
+
+CREATE TABLE adrese (
+                        id INT PRIMARY KEY,
+                        tara VARCHAR(100),
+                        oras VARCHAR(100),
+                        strada VARCHAR(255)
+);

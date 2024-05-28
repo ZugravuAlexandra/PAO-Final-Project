@@ -7,16 +7,13 @@ public class Biblioteca {
 
     // Compozitie (has a)
     private Adresa adresa;
-    // Agregare: Cartea poate exista fara biblioteca
-    private List<Carte> carti;
 
     public Biblioteca() {}
 
-    public Biblioteca(int id, String nume, Adresa adresa, List<Carte> carti) {
+    public Biblioteca(int id, String nume, Adresa adresa) {
         this.id = id;
         this.nume = nume;
         this.adresa = adresa;
-        this.carti = carti;
     }
 
     public Biblioteca(int id, String nume) {
@@ -24,11 +21,6 @@ public class Biblioteca {
         this.nume = nume;
     }
 
-    public Biblioteca(int id, String nume, Adresa adresa) {
-        this.id = id;
-        this.nume = nume;
-        this.adresa = adresa;
-    }
 
     public int getId() {
         return id;
@@ -54,20 +46,12 @@ public class Biblioteca {
         this.adresa = adresa;
     }
 
-    public List<Carte> getCarti() {
-        return carti;
-    }
-
-    public void setCarti(List<Carte> carti) {
-        this.carti = carti;
-    }
 
     @Override
     public String toString() {
         return "Biblioteca " +
                 " id = " + id + "\n" +
                 " nume: " + nume + "\n" +
-                " adresa: " + adresa + "\n" +
-                " carti " + carti;
+                " adresa: " + adresa + "\n";
     }
 }

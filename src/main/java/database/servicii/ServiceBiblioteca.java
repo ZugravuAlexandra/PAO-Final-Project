@@ -2,10 +2,14 @@ package database.servicii;
 
 import database.entitati.Adresa;
 import database.entitati.Biblioteca;
+import database.entitati.Carte;
 import database.entitati.Evenimente;
+import database.repository.AdresaRepo;
+import database.servicii.ServiceCarte;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
 public class ServiceBiblioteca {
@@ -86,15 +90,24 @@ public class ServiceBiblioteca {
         }
         System.out.println("Nume: ");
         String nume = scanner.nextLine();
-        System.out.println("Adresa (introduceți ID-ul adresei): ");
-        int adresaId = Integer.parseInt(scanner.nextLine());
+        int adresaId;
+        Adresa adresa;
+        while (true) {
+            // Verificare dacă adresa există în baza de date
+            System.out.println("Adresa (introduceți ID-ul adresei): ");
+            adresaId = Integer.parseInt(scanner.nextLine());
+            adresa = AdresaRepo.readById(adresaId);
+            if (adresa == null) {
+                System.out.println("Adresa introdusă nu există în baza de date. Introduceți alt ID pentru adresa.");
+            } else {
+                break; // Ieșim din bucla while dacă adresa este validă
+            }
+        }
 
-        // Construirea unui obiect Biblioteca cu adresa golă, care va fi completată mai târziu
-        Biblioteca biblioteca = new Biblioteca(id,nume, null);
-        biblioteca.setAdresa(new Adresa(adresaId)); // Setăm doar ID-ul adresei pentru moment
+        Biblioteca biblioteca = new Biblioteca(id,nume,adresa);
 
 
-        return new Biblioteca(id, nume);
+        return biblioteca;
     }
 
     private void AdaugaBiblioteca() {
